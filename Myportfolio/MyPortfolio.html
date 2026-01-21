@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaron | Portfolio</title>
+
+  <!-- ===== CSS ===== -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+  header {
+  background: #020617;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  transform: translateY(-100%);
+  transition: transform 0.6s ease;
+}
+
+
+
+
+
+    nav a {
+      color: #e5e7eb;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    section {
+      padding: 80px 10%;
+      background-image: url(b3eb4576f2128bcd5970159be95b9f3e.jpg);
+     background-size: cover;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 90vh;
+      background-repeat: no-repeat;
+      padding: 100px;
+      
+    }
+
+    .hero {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease-out;
+}
+
+.hero.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+    .hero-text h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text span {
+      color: #38bdf8;
+    }
+
+    .hero-text p {
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90vh;
+  gap: 40px;
+}
+
+/* IMAGE CONTAINER */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CIRCLE */
+.image-circle {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  animation: glowRotate 6s linear infinite;
+}
+
+/* IMAGE */
+.image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #020617;
+}
+
+/* GLOW ANIMATION */
+@keyframes glowRotate {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(56,189,248,0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(56,189,248,0.7));
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(56,189,248,0.4));
+  }
+}
+
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #38bdf8;
+      color: #020617;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .about, .projects, .contact {
+      background: #020617;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      color: #38bdf8;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 10px;
+
+  /* animation base state */
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: 
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.project-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.project-card:hover {
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
+}
+
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>Aaron Works</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h2>Hi, I'm <span>Aaron</span></h2>
+      <p>IT student in Quezon City University and aspiring developer. I build simple, clean, and functional web projects using HTML, CSS, and JavaScript.</p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+
+    <div class="hero-image">
+  <div class="image-circle">
+    <img src="picture.jpg">
+  </div>
+</div>
+
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <h3>About Me</h3>
+    <p>
+      I am Aaron Vincent S. Mapili motivated IT student with interest in web development, networking, and system administration. I enjoy learning new technologies and building practical projects.
+    </p>
+    <h3>Skills</h3>
+    <li>Programming Website HTML,CSS,JAVASCRIPT</li>
+    <li>Basic Networking Routing</li>
+    <li>Documentations</li>
+    <h3>School</h3>
+    <li>Quezon City University (2nd Year)</li>
+    <li>Trinity Polytechnic College (2024)</li>
+    <li>Sta Lucia High School (2022)</li>
+    <li>San Gabriel Elementary School (2018)</li>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="projects">
+    <h3>Projects</h3>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h4>Portfolio Website</h4>
+        <p>A personal portfolio built with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="project-card">
+        <h4>Network Configuration</h4>
+        <p>Hands-on router and network setup documentation.</p>
+      </div>
+      <div class="project-card">
+        <h4>School System Project</h4>
+        <p>A simple system proposal and documentation project.</p>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <h3>Contact</h3>
+    <p>Email Personal: aaronvincent37@gmail.com</p>
+    <p>Email School: mapili.aaron.vincent.suba@gmail.com</p>
+    <p>Facebook: Aaron Vincent S. Mapili</p>
+    <p>Instagram: Aaron Vincent</p>
+    <p>Location: Quezon City, Philippines</p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2026 Aaron Works. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+    // Simple greeting message
+    console.log("Welcome to Aaron's Portfolio!");
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    
+  const hero = document.querySelector(".hero");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        hero.classList.add("show");
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(hero);
+
+  const projectCards = document.querySelectorAll(".project-card");
+
+  const projectObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("show");
+        }, index * 150); // stagger delay
+      }
+    });
+  }, { threshold: 0.2 });
+
+  projectCards.forEach(card => projectObserver.observe(card));
+
+
+
+</script>
+
+  </script>
+
+</body>
+</html>
